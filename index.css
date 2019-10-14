@@ -18,6 +18,8 @@ body {
 html:not([data-scroll='0']) .topbar-margin {
     background: white;
     transition: 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
 }
 
 html:not([data-scroll='0']) .topbar-margin a:not(.client-zone) {
@@ -81,8 +83,7 @@ html:not([data-scroll='0']) .topbar-margin a:not(.client-zone) {
 }
 
 a.menu-item:hover {
-    background: #02707a;
-    color: white !important;
+    color: #02858F !important;
     transition: .3s;
 }
 
@@ -95,8 +96,9 @@ a.menu-item.no-hover:hover {
 }
 
 .flag {
-    height: 24px;
-    border: solid 1px black;
+    border-radius: 5px;
+    height: 34px;
+    border: solid 1px lightgrey;
 }
 
 .flag:hover {
@@ -105,7 +107,7 @@ a.menu-item.no-hover:hover {
 }
 
 .hero {
-    height: 400px;
+    height: 600px;
     display: flex;
     align-items: center;
     background-image: url("img/wheat.jpg");
@@ -128,41 +130,90 @@ a.menu-item.no-hover:hover {
 
 .section {
     padding: 50px;
+    margin-bottom: 70px;
 }
 
 .section-heading {
+    font-size: 3rem;
+    margin: 0;
     padding: 30px 0;
 }
 
 .tiles {
     display: flex;
     flex-wrap: wrap;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06) !important;
-    border-radius: 15px;
 }
 
 .tile {
-    flex-basis: 50%;
+    margin: 50px 400px;
+    background: white;
+    color: black;
+    display: flex;
     box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.tile:nth-child(odd) {
+    margin-left: 50px;
+}
+
+.tile:nth-child(odd) img {
+    order: -1;
+    border-radius: 20px 0 0 20px;
+}
+
+.tile:nth-child(even) {
+    margin-right: 50px;
+}
+
+.tile > img:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.tile > *:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+.tile > * {
+
 }
 
 .tile img {
-    width: 100%;
-    height: 100%;
+    flex-basis: 50%;
+    width: 50%;
 }
 
-.tile:first-child img {
-    border-radius: 15px 0 0 0;
+.tile-heading {
+    color: black;
+    font-size: 40px;
+    margin: 0 0 20px;
 }
 
-.tile:nth-child(5) img {
-    border-radius: 0 0 0 15px;
+.tile-text {
+    color: #626262;
+    flex-basis: 50%;
+    padding: 50px;
+    font-size: 24px;
 }
 
-.tile--text {
-    padding: 20px;
-
+.section--inverted {
+    background: white;
+    color: black;
+    margin: 0;
 }
+
+.section-body {
+    margin: 50px;
+    display: flex;
+    flex-basis: 100%;
+}
+
+.section-body > * {
+    padding: 0 50px;
+}
+
+/* About us */
 
 .about-us {
     display: flex;
@@ -175,12 +226,28 @@ a.menu-item.no-hover:hover {
 
 .about-us .section-text {
     flex-basis: 50%;
-    padding: 0 30px;
+    padding: 0 50px;
     box-sizing: border-box;
+    font-size: 40px;
 }
 
 .about-us .imsol-logo {
     width: 50%;
+}
+
+/* Contact */
+
+.contact .section-body {
+    align-items: center;
+}
+
+.contact .divider {
+    padding: 0;
+    width: 2px;
+    height: 300px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    background: grey;
 }
 
 .contact {
@@ -199,11 +266,15 @@ a.menu-item.no-hover:hover {
 .contact form {
     display: flex;
     flex-direction: column;
-
 }
 
 .contact form * {
     margin: 10px;
+}
+
+.contact form label {
+    margin: 20px 0 -5px 10px;
+    color: grey;
 }
 
 .contact form *:focus {
@@ -220,10 +291,18 @@ a.menu-item.no-hover:hover {
 }
 
 .contact form input[type="submit"] {
-    width: 30%;
+    width: 200px;
     min-width: 30px;
-    font-weight: bold;
     padding: 15px;
+    font-size: 16px;
+}
+
+.contact form input[type="submit"]:hover {
+    background: #e2e2e2;
+}
+
+.contact form input[type="submit"]:active {
+    background: #bebebe;
 }
 
 .contact form textarea {
@@ -235,15 +314,24 @@ a.menu-item.no-hover:hover {
     border-radius: 5px;
 }
 
-.contacts ul {
-    list-style: none;
-    margin: 0 20px;
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.contacts ul li {
-    padding: 10px;
+.contacts a {
+    text-decoration: none;
+    font-size: 30px;
     color: darkslategrey;
+    margin-bottom: 50px;
 }
+
+.contact a:active {
+    color: #000000;
+}
+
+/* Utilities */
 
 .shadow {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
@@ -251,4 +339,8 @@ a.menu-item.no-hover:hover {
 
 .shadow-md {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
