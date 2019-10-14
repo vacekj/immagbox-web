@@ -82,17 +82,25 @@ html:not([data-scroll='0']) .topbar-margin a:not(.client-zone) {
     align-items: center;
 }
 
-a.menu-item:hover {
+a.menu-item:not(.client-zone):hover {
     color: #02858F !important;
     transition: .3s;
 }
 
 a.menu-item.no-hover:hover {
-    background: white;
+    background: transparent;
 }
 
 .client-zone {
     background: #02858F;
+}
+
+.client-zone:hover {
+    background: #02707a;
+}
+
+.client-zone:active {
+    background: #02636c;
 }
 
 .flag {
