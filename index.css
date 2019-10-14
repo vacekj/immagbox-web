@@ -240,7 +240,9 @@ a.menu-item.no-hover:hover {
 }
 
 .about-us .imsol-logo {
-    width: 50%;
+    width: 25%;
+    margin-right: 25%;
+    object-fit: scale-down;
 }
 
 /* Contact */
@@ -337,6 +339,87 @@ a.menu-item.no-hover:hover {
 
 .contact a:active {
     color: #000000;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+    .topbar-margin {
+        padding: 10px 30px;
+    }
+
+    .topbar .menu {
+        display: none;
+
+    }
+
+    .section {
+        padding: 25px;
+    }
+
+    div.tile {
+        flex-wrap: wrap;
+        margin: 0 0 40px 0 !important;
+    }
+
+    .tile img {
+        width: 100%;
+    }
+
+    .tile > img:first-child {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .tile > *:last-child {
+        border-radius: 0 20px 20px 0;
+    }
+
+    .tile-text {
+        padding: 25px;
+        flex-basis: 100%;
+    }
+
+    .about-us .section-body {
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    .about-us .section-text {
+        padding: 25px;
+        font-size: 30px;
+        flex-basis: 100%;
+    }
+
+    .about-us .imsol-logo {
+        margin: 0 0 20px;
+        flex-basis: 100%;
+    }
+
+    .contact .section-body {
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    .contact-form {
+        padding: 0;
+        flex-basis: 100%;
+    }
+
+    .contacts {
+        padding: 0;
+    }
+
+    .contacts a {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .contact .divider {
+        border-radius: 20px;
+        margin: 20px 0;
+        height: 1px;
+        width: 100%;
+    }
 }
 
 /* Utilities */
